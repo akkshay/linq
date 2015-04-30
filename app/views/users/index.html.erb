@@ -1,0 +1,15 @@
+<h1>Welcome to Linq</h1>
+</BR>
+<% if current_user %> 
+	<h3> Hello!</h3>
+	<%= current_user.name%>
+	<%= button_to "Create a New Link!", new_user_link_path(user_id: current_user.id), :class => "button medium", :method => :get %>
+<% else %>
+    <h4>Linq is a quick and fun way to share all sorts of media with your friends. You can share music, videos, articles, photos, and more! All you need is the link. Share links with friends, discard ones you don't like, and circulate ones you do to gather more points.</h4>
+	</BR>
+	<div align = "center">
+		<%= link_to "Login", new_user_session_path %> or <%= link_to "Sign Up", new_user_registration_path %> to get started!
+	</div>         
+<% end %>
+
+
